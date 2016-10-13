@@ -7,8 +7,12 @@ public class Calculator {
 		else if(text.contains(",")){
 			String [] numbers = text.split("[,\n]");
 			int result = 0;
-			for(int i = 0; i < numbers.length; i++)
-				result = result + Integer.parseInt(numbers[i]);
+			for(int i = 0; i < numbers.length; i++){
+				if(Integer.parseInt(numbers[i]) < 0)
+					throw new IllegalArgumentException("number cannot be negative");
+				else
+					result = result + Integer.parseInt(numbers[i]);
+			}
 			return result;
  		}
 		else

@@ -2,6 +2,8 @@ package is.ru.stringcalculator;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.Rule;
 
 public class CalculatorTest{
 	
@@ -30,4 +32,14 @@ public class CalculatorTest{
 	public void testStringWithNewLine(){
 		assertEquals(6, Calculator.add("1\n2,3"));
 	}
+	@Test
+	public void testStringWithNegativeNumbers(){
+		try {
+    	assertEquals("number cannot be negative", Calculator.add("-1, 2"));
+		} 
+		catch (Exception e) {
+    	String expectedMessage = "number cannot be negative";
+    	assertEquals( "Exception message must be correct", expectedMessage, e.getMessage() );
+		}
+	}  
 }
