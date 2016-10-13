@@ -6,7 +6,10 @@ public class Calculator {
 			return 0;
 		else if(text.contains(",")){
 			String [] numbers = text.split(",");
-			return (Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]));
+			int result = 0;
+			for(int i = 0; i < numbers.length; i++)
+				result = result + Integer.parseInt(numbers[i]);
+			return result;
  		}
 		else
 			return 1;
