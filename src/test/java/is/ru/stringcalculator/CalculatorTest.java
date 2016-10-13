@@ -26,4 +26,8 @@ public class CalculatorTest{
 	public void testUnknownNumbers2(){
 		assertEquals(21, Calculator.add("1,2,3,4,5,6"));
 	}
+	@Test
+	public void testStringWithNewLine(){
+		assertEquals(6, Calculator.add("1\n2,3"));
+	}
 }
