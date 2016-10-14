@@ -10,6 +10,8 @@ public class Calculator {
 			for(int i = 0; i < numbers.length; i++){
 				if(Integer.parseInt(numbers[i]) < 0)
 					throw new IllegalArgumentException("number cannot be negative");
+				else if(Integer.parseInt(numbers[i]) > 1000){}
+					//do nothing
 				else
 					result = result + Integer.parseInt(numbers[i]);
 			}

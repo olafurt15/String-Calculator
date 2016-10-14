@@ -41,5 +41,9 @@ public class CalculatorTest{
     	String expectedMessage = "number cannot be negative";
     	assertEquals( "Exception message must be correct", expectedMessage, e.getMessage() );
 		}
+	}
+	@Test
+	public void testIgnoreNumbers(){
+		assertEquals(2, Calculator.add("1001,2"));
 	}  
 }
